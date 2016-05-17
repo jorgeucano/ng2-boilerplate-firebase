@@ -6,7 +6,7 @@
 </nav>
 <router-outlet></router-outlet>
 
-<ul *ngFor="#item of items | async">
+<ul *ngFor="let item of items | async">
   <li class="text">
     {{item}}
   </li>
