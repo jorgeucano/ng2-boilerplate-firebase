@@ -1,0 +1,13 @@
+<h1>
+  {{title}}
+</h1>
+<nav>
+  <a [routerLink]="['routerdash']">routerdash</a>
+</nav>
+<router-outlet></router-outlet>
+
+<ul *ngFor="#item of items | async">
+  <li class="text">
+    {{item}}
+  </li>
+</ul>
