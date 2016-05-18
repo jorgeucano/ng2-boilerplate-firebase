@@ -11,3 +11,7 @@
      {{item.user_id}} - {{ item.name }}
    </li>
 </ul>
+<input #name>
+<input #num>
+
+<button (click)=addToFirebase(name.value,num.value)>Add</button>
