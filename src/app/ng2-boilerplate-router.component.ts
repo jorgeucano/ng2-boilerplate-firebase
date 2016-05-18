@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterdashComponent } from './+routerdash';
 import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -16,10 +16,14 @@ import { Observable } from 'rxjs/Observable';
 @Routes([
   {path: '/routerdash', component: RouterdashComponent}
 ])
+
 export class Ng2BoilerplateRouterAppComponent {
   title = 'ng2-boilerplate-router works!';
-  items: Observable<any[]>;
-  contructor(af: AngularFire){
-    this.items = af.list('/items');
+
+  items: FirebaseListObservable<any[]>;
+  item: Observable<any>;
+  constructor(af: AngularFire) {
+    this.items = af.database.list('/CONTACTO');
+    console.log("items", this.items);
   }
 }

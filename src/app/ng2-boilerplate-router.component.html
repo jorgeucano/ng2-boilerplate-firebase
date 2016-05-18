@@ -6,8 +6,8 @@
 </nav>
 <router-outlet></router-outlet>
 
-<ul *ngFor="let item of items | async">
-  <li class="text">
-    {{item}}
-  </li>
+<ul>
+  <li *ngFor="let item of items | async">
+     {{item.user_id}} - {{ item.name }}
+   </li>
 </ul>

@@ -42,7 +42,6 @@ barrels.forEach((barrelName: string) => {
 cliSystemConfigPackages['angularfire2'] = {
   main: 'angularfire2'
 }
-console.log(cliSystemConfigPackages);
 
 /** Type declaration for ambient System. */
 declare var System: any;
