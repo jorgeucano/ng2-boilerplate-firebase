@@ -8,7 +8,7 @@
 
 <ul>
   <li *ngFor="let item of items | async">
-     {{item.user_id}} - {{ item.name }}
+     {{item.user_id}} - {{ item.name }} <button (click)=remove(item.$key)>Remove</button>
    </li>
 </ul>
 <input #name>

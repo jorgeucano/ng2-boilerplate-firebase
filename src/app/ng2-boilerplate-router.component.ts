@@ -18,19 +18,27 @@ import { Observable } from 'rxjs/Observable';
 ])
 
 export class Ng2BoilerplateRouterAppComponent {
-  title = 'ng2-boilerplate-router works!';
+  title = 'ng2-boilerplate-firebase works!';
 
-  items: FirebaseListObservable<any[]>;
   item: Observable<any>;
+  items: FirebaseListObservable<any[]>;
   afi:any;
   constructor(af: AngularFire) {
     this.afi = af;
     this.items = af.database.list('/CONTACTO');
     console.log("items", this.items);
   }
+
   addToFirebase(nameVar: string, user_idVar:string):void{
     const itemObservable = this.afi.database.list('/CONTACTO');
     itemObservable.push({ name: nameVar, user_id: user_idVar});
   }
+
+  remove(itemKey:string):void{
+    alert(itemKey);
+    const items = this.afi.database.list('/CONTACTO');
+    items.remove(itemKey);
+  }
+
 
 }
